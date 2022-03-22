@@ -99,9 +99,9 @@ function App(props) {
   const prevTaskLength = usePrevious(tasks.length);
   const alternativeUrl = "http://todo.org";
 
-  // function getIntegrity() {
-  //   "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC";
-  // }
+  function getIntegrity() {
+    "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC";
+  }
 
   useEffect(() => {
     const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -109,7 +109,7 @@ function App(props) {
     if (isDarkMode) {
       const script = document.createElement("script"); // Sensitive
       script.src = "https://cdnexample.com/dark-mode-styles.js";
-      // script.integrity = getIntegrity();
+      script.integrity = getIntegrity();
       document.head.appendChild(script);
     }
   }, []);
